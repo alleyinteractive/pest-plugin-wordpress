@@ -45,11 +45,5 @@
             "@test:types",
             "@test:unit"
         ]
-    },
-    "repositories": {
-        "pest": {
-            "type": "vcs",
-            "url": "https://github.com/pestphp/pest"
-        }
     }
 }
