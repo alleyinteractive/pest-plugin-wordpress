@@ -21,7 +21,7 @@
         }
     },
     "require-dev": {
-        "pest-dev-tools": "dev-master"
+        "pestphp/pest-dev-tools": "dev-master"
     },
     "minimum-stability": "dev",
     "prefer-stable": true,
