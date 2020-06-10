@@ -1,18 +1,19 @@
-name: Continuous Integration
+name: Formats
 
 on: ['push', 'pull_request']
 
 jobs:
   ci:
-    runs-on: ubuntu-latest
+    runs-on: ${{ matrix.os }}
 
     strategy:
       fail-fast: true
       matrix:
-        php: [7.3, 7.4]
+        os: [ubuntu-latest]
+        php: [7.4]
         dependency-version: [prefer-lowest, prefer-stable]
 
-    name: CI - PHP ${{ matrix.php }} (${{ matrix.dependency-version }})
+    name: Formats P${{ matrix.php }} - ${{ matrix.os }} - ${{ matrix.dependency-version }}
 
     steps:
 
@@ -29,7 +30,7 @@ jobs:
       uses: shivammathur/setup-php@v2
       with:
         php-version: ${{ matrix.php }}
-        extensions: mbstring, zip
+        extensions: dom, mbstring, zip
         tools: prestissimo
         coverage: pcov
 
@@ -43,6 +44,3 @@ jobs:
 
     - name: Type Checks
       run: vendor/bin/phpstan analyse --ansi
-
-    - name: Unit Tests
-      run: vendor/bin/pest --colors=always
