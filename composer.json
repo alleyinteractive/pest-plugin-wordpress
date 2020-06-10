@@ -13,12 +13,16 @@
     "license": "MIT",
     "require": {
         "php": "^7.3",
-        "pestphp/pest": "^0.2"
+        "pestphp/pest": "^0.2",
+        "pestphp/pest-plugin": "^0.2"
     },
     "autoload": {
         "psr-4": {
             "Pest\\PluginName\\": "src/"
-        }
+        },
+        "files": [
+            "src/Autoload.php"
+        ]
     },
     "require-dev": {
         "pestphp/pest-dev-tools": "dev-master"
