@@ -35,8 +35,5 @@ jobs:
     - name: Install Composer dependencies
       run: composer update --${{ matrix.dependency-version }} --no-interaction --prefer-dist
 
-    - name: Unit Tests
-      run: php bin/pest --colors=always --exclude-group=integration
-
     - name: Integration Tests
-      run: php bin/pest --colors=always --group=integration
+      run: php ./vendor/bin/pest
