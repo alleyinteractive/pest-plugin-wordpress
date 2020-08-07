@@ -38,7 +38,4 @@ jobs:
       if: "matrix.php >= 8"
 
     - name: Unit Tests
-      run: php bin/pest --colors=always --exclude-group=integration
-
-    - name: Integration Tests
-      run: php bin/pest --colors=always --group=integration
+      run: ./vendor/bin/pest --colors=always
