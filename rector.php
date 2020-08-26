@@ -19,6 +19,11 @@ return static function (ContainerConfigurator $containerConfigurator): void {
         SetList::SOLID,
         SetList::DOCTRINE_CODE_QUALITY,
         SetList::CODE_QUALITY,
+        SetList::PHP_53,
+        SetList::PHP_54,
+        SetList::PHP_55,
+        SetList::PHP_56,
+        SetList::PHP_70,
         SetList::PHP_71,
         SetList::PHP_72,
         SetList::PHP_73
