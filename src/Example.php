@@ -16,7 +16,7 @@ trait Example
      */
     public function example(string $name): TestCase
     {
-        assertNotEmpty($name);
+        $this->assertNotEmpty($name);
 
         return $this;
     }
