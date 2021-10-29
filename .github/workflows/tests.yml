@@ -20,7 +20,7 @@ jobs:
         options: --entrypoint redis-server
     strategy:
       matrix:
-        os: [ubuntu-latest, macos-latest, windows-latest]
+        os: [ubuntu-latest]
         php: ['7.4', '8.0']
         dependency-version: [prefer-lowest, prefer-stable]
         wp_version: ["latest"]
