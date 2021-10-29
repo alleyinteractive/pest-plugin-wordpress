@@ -50,11 +50,5 @@
             "@test:types",
             "@test:unit"
         ]
-    },
-    "repositories": {
-        "local": {
-          "type": "path",
-          "url": "../mantle-framework"
-        }
-      }
+    }
 }
