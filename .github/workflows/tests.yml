@@ -37,13 +37,13 @@ jobs:
       run: composer update --${{ matrix.dependency-version }} --no-interaction --no-progress --ansi
 
     - name: Install WordPress and Copy Project
-        shell: bash
-        run: |
-          bash bin/install-wp-tests.sh wordpress_unit_tests root '' 127.0.0.1 $WP_VERSION
+      shell: bash
+      run: |
+        bash bin/install-wp-tests.sh wordpress_unit_tests root '' 127.0.0.1 $WP_VERSION
 
-          # Go into the core directory and replace wp-content.
-          rm -rf ${WP_CORE_DIR}/wp-content/plugins/pest-plugin-wordpress
-          rsync -aWq --no-compress . ${WP_CORE_DIR}/wp-content/plugins/pest-plugin-wordpress
+        # Go into the core directory and replace wp-content.
+        rm -rf ${WP_CORE_DIR}/wp-content/plugins/pest-plugin-wordpress
+        rsync -aWq --no-compress . ${WP_CORE_DIR}/wp-content/plugins/pest-plugin-wordpress
 
       - name: Unit Tests
         shell: bash
