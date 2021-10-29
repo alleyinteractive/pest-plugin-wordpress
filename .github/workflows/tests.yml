@@ -10,7 +10,11 @@ jobs:
         os: [ubuntu-latest, macos-latest, windows-latest]
         php: ['7.4', '8.0']
         dependency-version: [prefer-lowest, prefer-stable]
-
+        wp_version: ["latest"]
+    env:
+      CACHEDIR: /tmp/test-cache
+      WP_CORE_DIR: /tmp/wordpress
+      WP_VERSION: ${{ matrix.wp_version }}
     name: PHP ${{ matrix.php }} - ${{ matrix.os }} - ${{ matrix.dependency-version }}
 
     steps:
@@ -32,5 +36,17 @@ jobs:
     - name: Install PHP dependencies
       run: composer update --${{ matrix.dependency-version }} --no-interaction --no-progress --ansi
 
-    - name: Unit Tests
-      run: ./vendor/bin/pest --colors=always
+    - name: Install WordPress and Copy Project
+        shell: bash
+        run: |
+          bash bin/install-wp-tests.sh wordpress_unit_tests root '' 127.0.0.1 $WP_VERSION
+
+          # Go into the core directory and replace wp-content.
+          rm -rf ${WP_CORE_DIR}/wp-content/plugins/pest-plugin-wordpress
+          rsync -aWq --no-compress . ${WP_CORE_DIR}/wp-content/plugins/pest-plugin-wordpress
+
+      - name: Unit Tests
+        shell: bash
+        run: |
+          cd ${WP_CORE_DIR}/wp-content/plugins/pest-plugin-wordpress
+          ./vendor/bin/pest --colors=always
