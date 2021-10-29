@@ -1,6 +1,6 @@
 {
-    "name": "pestphp/pest-plugin-template",
-    "description": "My awesome plugin",
+    "name": "alleyinteractive/pest-plugin-wordpress",
+    "description": "WordPress Pest Integration",
     "keywords": [
         "php",
         "framework",
@@ -8,17 +8,19 @@
         "unit",
         "test",
         "testing",
-        "plugin"
+        "plugin",
+        "wordpress"
     ],
     "license": "MIT",
     "require": {
         "php": "^7.3 || ^8.0",
+        "alleyinteractive/mantle-framework": "*",
         "pestphp/pest": "^1.0",
         "pestphp/pest-plugin": "^1.0"
     },
     "autoload": {
         "psr-4": {
-            "Pest\\PluginName\\": "src/"
+            "Pest\\PestPluginWordPress\\": "src/"
         },
         "files": [
             "src/Autoload.php"
@@ -48,5 +50,11 @@
             "@test:types",
             "@test:unit"
         ]
-    }
+    },
+    "repositories": {
+        "local": {
+          "type": "path",
+          "url": "../mantle-framework"
+        }
+      }
 }
