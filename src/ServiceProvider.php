@@ -9,7 +9,8 @@ namespace Pest\PestPluginWordPress;
  */
 class ServiceProvider extends \Mantle\Support\Service_Provider
 {
-    protected $commands = [
-        Commands\InstallCommand::class,
-    ];
+    public function register(): void
+    {
+        $this->add_command(Commands\InstallCommand::class);
+    }
 }
