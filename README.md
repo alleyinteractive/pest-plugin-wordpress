@@ -1,7 +1,5 @@
 # WordPress Pest Plugin
 
-**🚨 Under active development, not ready for production use yet! 🚨**
-
 Supports integrating Pest with your WordPress code base through the [Mantle
 Framework](https://mantle.alley.co/). Read about the [Mantle Testing Framework
 here](https://mantle.alley.co/testing/test-framework/).
@@ -99,6 +97,7 @@ Install the WordPress plugin via the Composer package manager and run the `mantl
 
 ```bash
 composer require alleyinteractive/pest-plugin-wordpress --dev
+
 wp mantle pest:install
 ```
 
@@ -124,15 +123,15 @@ More information can be found on the [Testing Framework](https://mantle.alley.co
 use function Pest\PestPluginWordPress\from;
 use function Pest\PestPluginWordPress\get;
 
-it('should load the homepage', function () {
-    get('/')
-        ->assertStatus(200)
-        ->assertSee('home');
-});
+it( 'should load the homepage', function () {
+    get( '/' )
+        ->assertStatus( 200 )
+        ->assertSee( 'home' );
+} );
 
-it('should load with a referrer', function () {
-    from('https://laravel.com/')
-        ->get('/')
-        ->assertStatus(200);
+it( 'should load with a referrer', function () {
+    from( 'https://laravel.com/' )
+        ->get( '/' )
+        ->assertStatus( 200 );
 });
 ```
