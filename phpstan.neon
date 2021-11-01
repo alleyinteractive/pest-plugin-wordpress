@@ -14,3 +14,9 @@ parameters:
 
     ignoreErrors:
         - "#is not allowed to extend#"
+        - "#is neither abstract nor final#"
+        - "#with no value type specified in iterable type array#"
+
+    excludePaths:
+        analyseAndScan:
+            - src/stubs/*

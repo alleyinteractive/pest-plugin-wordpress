@@ -102,17 +102,18 @@ composer require alleyinteractive/pest-plugin-wordpress --dev
 wp mantle pest:install
 ```
 
-That's it! Pest is installed successfully on you Mantle project. You can run Pest via the `mantle pest:test` WP-CLI command or via Pest directly.
+That's it! Pest is installed successfully on you Mantle project. You can run
+your pest tests through Pest now:
 
 ```bash
-wp mantle pest:test
 ./vendor/bin/pest
 ```
 
-Mantle can also generate a Pest-friendly test by running the `mantle make:test` command
+Mantle can also generate a Pest-friendly test by running the `pest:test`
+WP-CLI command:
 
 ```bash
-wp mantle make:test <TestName> --pest
+wp mantle pest:test <TestName>
 ```
 
 # Writing Tests

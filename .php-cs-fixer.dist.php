@@ -2,6 +2,7 @@
 
 $finder = PhpCsFixer\Finder::create()
     ->in(__DIR__ . DIRECTORY_SEPARATOR . 'src')
+    ->exclude('stubs')
     ->in(__DIR__ . DIRECTORY_SEPARATOR . 'tests')
     ->append(['.php-cs-fixer.dist.php']);
 
