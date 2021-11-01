@@ -11,6 +11,9 @@ class ServiceProvider extends \Mantle\Support\Service_Provider
 {
     public function register(): void
     {
-        $this->add_command(Commands\InstallCommand::class);
+        $this->add_command([
+            Commands\InstallCommand::class,
+            Commands\MakeCommand::class,
+        ]);
     }
 }
