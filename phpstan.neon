@@ -8,6 +8,9 @@ parameters:
     paths:
         - src
 
+    bootstrapFiles:
+        - vendor/wordpress-autoload.php
+
     checkMissingIterableValueType: true
     checkGenericClassInNonGenericObjectType: false
     reportUnmatchedIgnoredErrors: true
