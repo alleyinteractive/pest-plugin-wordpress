@@ -8,6 +8,9 @@ parameters:
     paths:
         - src
 
+    bootstrapFiles:
+        - vendor/wordpress-autoload.php
+
     checkMissingIterableValueType: true
     checkGenericClassInNonGenericObjectType: false
     reportUnmatchedIgnoredErrors: true
@@ -15,8 +18,9 @@ parameters:
     ignoreErrors:
         - "#is not allowed to extend#"
         - "#is neither abstract nor final#"
-        - "#with no value type specified in iterable type array#"
+        - "#on mixed#"
 
     excludePaths:
         analyseAndScan:
+            - src/Commands
             - src/stubs/*
