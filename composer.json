@@ -14,7 +14,7 @@
     "license": "MIT",
     "require": {
         "php": "^7.4 || ^8.0",
-        "alleyinteractive/composer-wordpress-autoloader": ">=0.4",
+        "alleyinteractive/composer-wordpress-autoloader": "^0.6.0",
         "mantle-framework/testkit": "^0.5",
         "pestphp/pest-plugin": "^1.0",
         "pestphp/pest": "^1.0"
