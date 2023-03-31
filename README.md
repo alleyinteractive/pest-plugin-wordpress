@@ -122,7 +122,7 @@ wp mantle pest:test <TestName>
 
 # Writing Tests
 
-More information can be found on the [Testing Framework](https://mantle.alley.co/testing/test-framework/) page.
+More information can be found on the [Testing Framework](https://mantle.alley.com/docs/testing) page.
 
 ```php
 use function Pest\PestPluginWordPress\from;
