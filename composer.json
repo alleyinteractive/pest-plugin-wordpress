@@ -15,7 +15,7 @@
     "require": {
         "php": "^8.0",
         "alleyinteractive/composer-wordpress-autoloader": "^1.0",
-        "mantle-framework/testkit": "^0.10.6",
+        "mantle-framework/testkit": "^0.10",
         "pestphp/pest-plugin": "^1.1.0",
         "pestphp/pest": "^1.22.1",
         "symfony/var-dumper": "6.0.11 as 6.1.3"
