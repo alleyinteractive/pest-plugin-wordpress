@@ -10,3 +10,4 @@ coverage.xml
 *.swp
 *.swo
 .vscode
+.DS_Store
