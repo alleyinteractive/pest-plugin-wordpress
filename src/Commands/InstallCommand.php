@@ -28,11 +28,8 @@ class InstallCommand extends Command
 
     /**
      * Callback for the command.
-     *
-     * @param array $args       command Arguments
-     * @param array $assoc_args command flags
      */
-    public function handle(array $args, array $assoc_args = []): void
+    public function handle(): void
     {
         // todo: replace with Facade.
         $files = new Filesystem();
@@ -52,6 +49,6 @@ class InstallCommand extends Command
             $files->copy(__DIR__ . '/../stubs/ExampleTest.php', $exampleTestFile);
         }
 
-        $this->log('Pest installed successfully.');
+        $this->line('Pest installed successfully.');
     }
 }

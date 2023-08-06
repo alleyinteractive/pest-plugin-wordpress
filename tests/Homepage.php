@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 use function Pest\PestPluginWordPress\from;
 use function Pest\PestPluginWordPress\get;
 

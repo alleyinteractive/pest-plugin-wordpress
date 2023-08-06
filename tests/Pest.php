@@ -3,6 +3,8 @@
  * Plugin Test Setup.
  */
 
+declare(strict_types=1);
+
 use Mantle\Testing\Concerns\Refresh_Database;
 use Pest\PestPluginWordPress\FrameworkTestCase;
 

@@ -1,0 +1,18 @@
+name: Code Quality
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+  schedule:
+    - cron: '0 0 * * *'
+
+jobs:
+  composer-lint-phpstan:
+    uses: alleyinteractive/.github/.github/workflows/php-composer-command.yml@main
+    with:
+      command: |
+        lint
+        phpstan
+      php: 8.1

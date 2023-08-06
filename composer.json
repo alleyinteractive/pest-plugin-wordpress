@@ -1,67 +1,66 @@
 {
-    "name": "alleyinteractive/pest-plugin-wordpress",
-    "description": "WordPress Pest Integration",
-    "keywords": [
-        "php",
-        "framework",
-        "pest",
-        "unit",
-        "test",
-        "testing",
-        "plugin",
-        "wordpress"
-    ],
-    "license": "MIT",
-    "require": {
-        "php": "^8.0",
-        "alleyinteractive/composer-wordpress-autoloader": "^1.0",
-        "mantle-framework/testkit": "^0.11",
-        "pestphp/pest-plugin": "^1.1.0",
-        "pestphp/pest": "^1.22.1",
-        "symfony/var-dumper": "6.0.11 as 6.1.3"
+  "name": "alleyinteractive/pest-plugin-wordpress",
+  "description": "WordPress Pest Integration",
+  "keywords": [
+    "php",
+    "framework",
+    "pest",
+    "unit",
+    "test",
+    "testing",
+    "plugin",
+    "wordpress"
+  ],
+  "license": "MIT",
+  "require": {
+    "php": "^8.1",
+    "mantle-framework/testkit": "^0.12.x-dev",
+    "pestphp/pest-plugin": "^2.0.1",
+    "pestphp/pest": "^2.12.1",
+    "symfony/var-dumper": "^6.3.3"
+  },
+  "require-dev": {
+    "pestphp/pest-dev-tools": "^2.14.0"
+  },
+  "autoload": {
+    "psr-4": {
+      "Pest\\PestPluginWordPress\\": "src/"
     },
-    "autoload": {
-        "psr-4": {
-            "Pest\\PestPluginWordPress\\": "src/"
-        },
-        "files": [
-            "src/Autoload.php"
-        ]
+    "files": [
+      "src/Autoload.php"
+    ]
+  },
+  "extra": {
+    "branch-alias": {
+      "dev-master": "2.x-dev"
     },
-    "require-dev": {
-        "pestphp/pest-dev-tools": "^1.0.0"
-    },
-    "extra": {
-        "branch-alias": {
-            "dev-master": "1.x-dev"
-        },
-        "mantle": {
-            "aliases": [],
-            "providers": [
-              "Pest\\PestPluginWordPress\\ServiceProvider"
-            ]
-        }
-    },
-    "minimum-stability": "dev",
-    "prefer-stable": true,
-    "config": {
-        "sort-packages": true,
-        "preferred-install": "dist",
-        "allow-plugins": {
-            "pestphp/pest-plugin": true,
-            "dealerdirect/phpcodesniffer-composer-installer": true,
-            "alleyinteractive/composer-wordpress-autoloader": true
-        }
-    },
-    "scripts": {
-        "lint": "php-cs-fixer fix -v",
-        "test:lint": "php-cs-fixer fix -v --dry-run",
-        "test:types": "phpstan analyse --ansi",
-        "test:unit": "pest --colors=always",
-        "test": [
-            "@test:lint",
-            "@test:types",
-            "@test:unit"
-        ]
+    "mantle": {
+      "aliases": [],
+      "providers": [
+        "Pest\\PestPluginWordPress\\ServiceProvider"
+      ]
     }
+  },
+  "minimum-stability": "dev",
+  "prefer-stable": true,
+  "config": {
+    "sort-packages": true,
+    "preferred-install": "dist",
+    "allow-plugins": {
+      "pestphp/pest-plugin": true,
+      "dealerdirect/phpcodesniffer-composer-installer": true,
+      "alleyinteractive/composer-wordpress-autoloader": true
+    }
+  },
+  "scripts": {
+    "lint": "php-cs-fixer fix -v",
+    "test:lint": "php-cs-fixer fix -v --dry-run",
+    "phpstan": "phpstan analyse --ansi",
+    "phpunit": "pest --colors=always",
+    "test": [
+      "lint",
+      "phpstan",
+      "phpunit"
+    ]
+  }
 }
