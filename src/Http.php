@@ -10,9 +10,8 @@ use Mantle\Testing\Test_Response;
 /**
  * Add a header to be sent with the request.
  *
- * @param string $name  header name (key)
- * @param string $value header value
- *
+ * @param  string  $name  header name (key)
+ * @param  string  $value header value
  * @return Test_Case
  */
 function withHeader(string $name, string $value)
@@ -24,8 +23,7 @@ function withHeader(string $name, string $value)
  * Set the referer header and previous URL session value in order to simulate
  * a previous request.
  *
- * @param string $url URL for the referer header
- *
+ * @param  string  $url URL for the referer header
  * @return Test_Case
  */
 function from(string $url)
@@ -36,10 +34,10 @@ function from(string $url)
 /**
  * Visit the given URI with a GET request.
  *
- * @param mixed                 $uri     request URI
- * @param array<string, string> $headers request Headers to load
+ * @param  mixed  $uri     request URI
+ * @param  array<string, string>  $headers request Headers to load
  */
-function get($uri, array $headers = []): Test_Response
+function get(mixed $uri, array $headers = []): Test_Response
 {
     return test()->get($uri, $headers);
 }
