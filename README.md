@@ -93,7 +93,7 @@ You can now use the [Mantle Testing
 Framework](https://mantle.alley.co/testing/test-framework/) with Pest to test
 your WordPress plugin with ease and simplicity. Your IDE will be able to type-hint you as well to allow you to use the testing framework.
 
-# Using With the Mantle Framework
+# Using with the Mantle Framework
 
 Requiring the WordPress Pest Plugin on an existing Mantle project will allow you
 to install Pest with a few commands.
@@ -106,7 +106,7 @@ composer require alleyinteractive/pest-plugin-wordpress --dev
 wp mantle pest:install
 ```
 
-That's it! Pest is installed successfully on you Mantle project. You can run
+That's it! Pest is installed successfully on your Mantle project. You can run
 your pest tests through Pest now:
 
 ```bash
