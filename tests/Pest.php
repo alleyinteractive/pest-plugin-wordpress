@@ -9,4 +9,4 @@ use Mantle\Testing\Concerns\Refresh_Database;
 uses(\Mantle\Testkit\Test_Case::class, Refresh_Database::class)->in(__DIR__);
 
 // Install WordPress via Mantle.
-\Mantle\Testing\install();
+\Mantle\Testing\manager()->with_sqlite()->install();

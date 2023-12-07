@@ -5,14 +5,14 @@ on: ['push', 'pull_request']
 jobs:
   ci:
     runs-on: ${{ matrix.os }}
-    services:
-      mysql:
-        image: mysql:5.7
-        env:
-          MYSQL_ALLOW_EMPTY_PASSWORD: yes
-        ports:
-          - 3306:3306
-        options: --health-cmd="mysqladmin ping" --health-interval=10s --health-timeout=5s --health-retries=3
+    # services:
+    #   mysql:
+    #     image: mysql:5.7
+    #     env:
+    #       MYSQL_ALLOW_EMPTY_PASSWORD: yes
+    #     ports:
+    #       - 3306:3306
+    #     options: --health-cmd="mysqladmin ping" --health-interval=10s --health-timeout=5s --health-retries=3
     strategy:
       matrix:
         os: [ubuntu-latest] # (macos-latest, windows-latest) 2.x-dev is under development
