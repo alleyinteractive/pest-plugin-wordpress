@@ -5,11 +5,27 @@ on: ['push', 'pull_request']
 jobs:
   ci:
     runs-on: ${{ matrix.os }}
+    services:
+      mysql:
+        image: mysql:5.7
+        env:
+          MYSQL_ALLOW_EMPTY_PASSWORD: yes
+        ports:
+          - 3306:3306
+        options: --health-cmd="mysqladmin ping" --health-interval=10s --health-timeout=5s --health-retries=3
     strategy:
       matrix:
         os: [ubuntu-latest] # (macos-latest, windows-latest) 2.x-dev is under development
         php: ['8.1', '8.2', '8.3']
         dependency-version: [prefer-lowest, prefer-stable]
+        wp_version: ["latest"]
+    env:
+      WP_DEVELOP_DIR: /tmp/wordpress
+      WP_CORE_DIR: /tmp/wordpress
+      WP_VERSION: ${{ matrix.wp_version }}
+      WP_DB_HOST: 127.0.0.1
+      WP_DB_USER: root
+      WP_DB_PASSWORD: '""'
 
     name: PHP ${{ matrix.php }} - ${{ matrix.os }} - ${{ matrix.dependency-version }}
 
