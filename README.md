@@ -72,7 +72,7 @@ Open up the `tests/Pest.php` file in your project the above command created for 
 Replace that with the following:
 
 ```php
-uses(\Pest\PestPluginWordPress\FrameworkTestCase::class)->in(__DIR__);
+uses(\Mantle\Testkit\Test_Case::class)->in(__DIR__);
 
 // Install WordPress via Mantle.
 \Mantle\Testing\install();

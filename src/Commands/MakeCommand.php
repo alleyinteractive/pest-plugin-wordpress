@@ -31,14 +31,7 @@ final class MakeCommand extends Command
      *
      * @var array<array>
      */
-    protected $synopsis = [
-        [
-            'description' => 'Test name',
-            'name' => 'name',
-            'optional' => false,
-            'type' => 'positional',
-        ],
-    ];
+    protected $signature = '{name}';
 
     /**
      * Callback for the command.

@@ -1,7 +1,6 @@
 <?php
 
 use Mantle\Testing\Concerns\Refresh_Database;
-use Pest\PestPluginWordPress\FrameworkTestCase;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,7 +13,7 @@ use Pest\PestPluginWordPress\FrameworkTestCase;
 |
 */
 
-uses(FrameworkTestCase::class, Refresh_Database::class)->in(__DIR__);
+uses(\App\Tests\TestCase::class, Refresh_Database::class)->in(__DIR__);
 
 // Install WordPress via Mantle.
 \Mantle\Testing\install();
