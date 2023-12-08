@@ -10,7 +10,7 @@ use Mantle\Filesystem\Filesystem;
 /**
  * Installation Command.
  */
-class InstallCommand extends Command
+final class InstallCommand extends Command
 {
     /**
      * The console command name.
@@ -29,8 +29,8 @@ class InstallCommand extends Command
     /**
      * Callback for the command.
      *
-     * @param array $args       command Arguments
-     * @param array $assoc_args command flags
+     * @param  array  $args       command Arguments
+     * @param  array  $assoc_args command flags
      */
     public function handle(array $args, array $assoc_args = []): void
     {
@@ -43,13 +43,13 @@ class InstallCommand extends Command
             $this->error(sprintf('%s already exists', $pestFile), true);
         }
 
-        $files->copy(__DIR__ . '/../stubs/Pest.php', $pestFile);
+        $files->copy(__DIR__.'/../stubs/Pest.php', $pestFile);
 
         // Copy an example test.
         $exampleTestFile = base_path('tests/feature/test-example-pest.php');
 
-        if (!$files->exists($exampleTestFile)) {
-            $files->copy(__DIR__ . '/../stubs/ExampleTest.php', $exampleTestFile);
+        if (! $files->exists($exampleTestFile)) {
+            $files->copy(__DIR__.'/../stubs/ExampleTest.php', $exampleTestFile);
         }
 
         $this->log('Pest installed successfully.');
