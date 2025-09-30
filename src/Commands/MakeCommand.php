@@ -36,13 +36,13 @@ final class MakeCommand extends Command
     /**
      * Callback for the command.
      *
-     * @param  array  $args       command Arguments
-     * @param  array  $assoc_args command flags
+     * @param  array  $args  command Arguments
+     * @param  array  $assoc_args  command flags
      */
     public function handle(array $args, array $assoc_args = []): void
     {
         $name = $this->argument('name');
-        $files = new Filesystem();
+        $files = new Filesystem;
 
         $pestFile = base_path("tests/{$name}.php");
 
