@@ -7,14 +7,16 @@ namespace Pest\PestPluginWordPress;
 use Closure;
 use Mantle\Contracts\Support\Arrayable;
 use Mantle\Http_Client\Http_Method;
+use Mantle\Http_Client\Request;
 use Mantle\Testing\Mock_Http_Response;
+use Mantle\Testing\Mock_Http_Sequence;
 
 /**
  * Fake a remote HTTP request.
  *
  * @template TCallableReturn of Mock_Http_Sequence|Mock_Http_Response|Arrayable|null
  *
- * @param  (callable(string|Request, ?array): TCallableReturn)|Mock_Http_Response|string|array<string, Mock_Http_Response|callable>  $url_or_callback  URL to fake, array of URL and response pairs, or a closure
+ * @param  (callable(string|Request, ?array<mixed>): TCallableReturn)|Mock_Http_Response|string|array<string, Mock_Http_Response|callable>  $url_or_callback  URL to fake, array of URL and response pairs, or a closure
  *                                                                                                                                                     that will return a faked response.
  * @param  Mock_Http_Response|array<mixed>|callable  $response  Optional response object, defaults to a 200 response with no body.
  * @param  Http_Method|string|null  $method  Optional request method to apply to, defaults to all. Does not apply to array of URL and response pairs OR callbacks.

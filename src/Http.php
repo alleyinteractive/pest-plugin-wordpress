@@ -120,11 +120,9 @@ function head(mixed $uri, array $headers = []): Test_Response
 }
 
 /**
- * Create a post and visit its permalink with a GET request.
+ * Create a WordPress post and visit its permalink with a GET request.
  *
- * @param  mixed  $uri  request URI
- * @param  array<string, mixed>  $data  request data
- * @param  array<string, string>  $headers  request Headers to load
+ * @param  array<string, mixed>  $arguments  request data
  */
 function fetchPost(array $arguments = []): Test_Response
 {

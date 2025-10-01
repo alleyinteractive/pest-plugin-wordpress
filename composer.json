@@ -32,7 +32,8 @@
         }
     },
     "require-dev": {
-        "pestphp/pest-dev-tools": "^4.0"
+        "pestphp/pest-dev-tools": "^4.0",
+        "szepeviktor/phpstan-wordpress": "*"
     },
     "extra": {
         "branch-alias": {
@@ -59,9 +60,10 @@
     "scripts": {
         "rector": "rector",
         "lint": "pint",
+        "phpstan": "phpstan --memory-limit=512M",
         "test:rector": "rector --dry-run",
         "test:lint": "pint --test",
-        "test:types": "phpstan analyse --ansi",
+        "test:types": "@phpstan",
         "test:unit": "pest --colors=always",
         "test:watch": "npx nodemon --watch tests --exec \"composer test:unit\" -e php",
         "test": [
