@@ -26,7 +26,7 @@ The WordPress Pest Plugin allows WordPress to be tested using the [Pest testing
  framework](https://pestphp.com/). Tests can be written in a very simple manner
  to 'bring the joy of testing to PHP'.
 
-![Example Test](https://pestphp.com/assets/img/pestinstall.png)
+<img src="https://pestphp.com/assets/img/pestinstall.png" alt="Example Test" width="300" />
 
 # Getting Started
 
@@ -72,7 +72,7 @@ Open up the `tests/Pest.php` file in your project the above command created for 
 Replace that with the following:
 
 ```php
-uses(\Mantle\Testkit\Test_Case::class)->in(__DIR__);
+uses(\Mantle\Testkit\TestCase::class)->in(__DIR__);
 
 // Install WordPress via Mantle.
 \Mantle\Testing\install();
