@@ -1,6 +1,15 @@
 name: Static Analysis
 
-on: ['push', 'pull_request']
+on:
+  push:
+    branches:
+      - main
+      - '*.x'
+  pull_request:
+    branches:
+      - main
+      - '*.x'
+    types: [opened, synchronize, reopened, ready_for_review]
 
 jobs:
   static:
