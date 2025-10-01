@@ -63,6 +63,7 @@
         "test:lint": "pint --test",
         "test:types": "phpstan analyse --ansi",
         "test:unit": "pest --colors=always",
+        "test:watch": "npx nodemon --watch tests --exec \"composer test:unit\" -e php",
         "test": [
             "@test:rector",
             "@test:lint",
