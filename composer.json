@@ -33,7 +33,7 @@
     },
     "require-dev": {
         "pestphp/pest-dev-tools": "^4.0",
-        "szepeviktor/phpstan-wordpress": "*"
+        "szepeviktor/phpstan-wordpress": "^2.0"
     },
     "extra": {
         "branch-alias": {
