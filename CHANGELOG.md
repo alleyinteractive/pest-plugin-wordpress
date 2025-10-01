@@ -4,6 +4,10 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
+## Unreleased
+
+- Upgrade to Pest 4.0. Requires PHP 8.3+ and `mantle-framework/testkit` 1.9+.
+
 ## v0.5.0
 
 - Upgraded to Pest 2.0.

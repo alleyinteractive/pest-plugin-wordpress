@@ -14,12 +14,7 @@ on:
 jobs:
   static:
     name: Static Tests
-
     runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        dependency-version: [prefer-lowest, prefer-stable]
-
     steps:
     - name: Checkout
       uses: actions/checkout@v4
@@ -27,7 +22,7 @@ jobs:
     - name: Setup PHP
       uses: shivammathur/setup-php@v2
       with:
-        php-version: 8.2
+        php-version: 8.3
         tools: composer:v2
         coverage: none
 
