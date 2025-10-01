@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-(static function () {
+(static function (): void {
     $files = [
         'Factory.php',
         'Http.php',
