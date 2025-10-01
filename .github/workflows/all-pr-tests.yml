@@ -5,10 +5,12 @@ on:
     branches:
       - develop
       - main
+      - '*.x'
   pull_request:
     branches:
       - develop
       - main
+      - '*.x'
     types: [opened, synchronize, reopened, ready_for_review]
 
 jobs:
