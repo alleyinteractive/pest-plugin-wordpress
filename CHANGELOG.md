@@ -4,7 +4,7 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
-## Unreleased
+## v1.0.0
 
 - Upgrade to Pest 4.0. Requires PHP 8.3+ and `mantle-framework/testkit` 1.9+.
 - Added multiple new helpers including `factory()`, `actingAs()`, and `fakeRequest()`.
