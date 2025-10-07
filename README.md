@@ -78,11 +78,6 @@ uses(\Mantle\Testkit\TestCase::class)->in(__DIR__);
 \Mantle\Testing\install();
 ```
 
-Mantle also uses
-[composer-wordpress-autoloader](https://github.com/alleyinteractive/composer-wordpress-autoloader)
-so you will need to load `vendor/wordpress-autoload.php` instead of just
-`vendor/autoload.php`.
-
 Finally, you can run Pest directly from the command line:
 
 ```bash
