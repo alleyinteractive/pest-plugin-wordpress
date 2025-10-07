@@ -11,3 +11,4 @@ coverage.xml
 *.swo
 .vscode
 .DS_Store
+.phpunit.cache

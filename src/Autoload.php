@@ -2,4 +2,15 @@
 
 declare(strict_types=1);
 
-require_once __DIR__.'/Http.php';
+(static function (): void {
+    $files = [
+        'Factory.php',
+        'Http.php',
+        'RemoteRequest.php',
+        'User.php',
+    ];
+
+    foreach ($files as $file) {
+        require_once __DIR__."/{$file}";
+    }
+})();
