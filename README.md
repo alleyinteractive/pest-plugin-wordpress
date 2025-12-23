@@ -88,6 +88,8 @@ You can now use the [Mantle Testing
 Framework](https://mantle.alley.co/testing/test-framework/) with Pest to test
 your WordPress plugin with ease and simplicity. Your IDE will be able to type-hint you as well to allow you to use the testing framework.
 
+See how [this plugin uses Pest with Mantle](https://github.com/alleyinteractive/pest-plugin-wordpress/blob/1.x/tests/Pest.php) for reference.
+
 # Using with the Mantle Framework
 
 Requiring the WordPress Pest Plugin on an existing Mantle project will allow you
