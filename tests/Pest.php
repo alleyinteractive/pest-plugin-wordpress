@@ -11,6 +11,5 @@ uses(TestCase::class)->in(__DIR__);
 
 // Install WordPress via Mantle.
 \Mantle\Testing\manager()
-    ->silence_phpunit_warning()
     ->with_sqlite()
     ->install();

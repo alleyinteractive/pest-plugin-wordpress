@@ -1,6 +1,7 @@
 {
     "name": "alleyinteractive/pest-plugin-wordpress",
     "description": "WordPress Pest Integration",
+    "license": "MIT",
     "keywords": [
         "php",
         "framework",
@@ -11,13 +12,19 @@
         "plugin",
         "wordpress"
     ],
-    "license": "MIT",
     "require": {
         "php": "^8.3",
-        "mantle-framework/testkit": "^1.9",
+        "mantle-framework/testkit": "^1.16",
         "pestphp/pest": "^4.0.0",
         "pestphp/pest-plugin": "^4.0.0"
     },
+    "require-dev": {
+        "mantle-framework/console": "^1.15",
+        "pestphp/pest-dev-tools": "^4.0",
+        "szepeviktor/phpstan-wordpress": "^2.0"
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true,
     "autoload": {
         "psr-4": {
             "Pest\\PestPluginWordPress\\": "src/"
@@ -31,9 +38,14 @@
             "Pest\\PestPluginWordPress\\Tests\\": "tests/"
         }
     },
-    "require-dev": {
-        "pestphp/pest-dev-tools": "^4.0",
-        "szepeviktor/phpstan-wordpress": "^2.0"
+    "config": {
+        "allow-plugins": {
+            "alleyinteractive/composer-wordpress-autoloader": true,
+            "dealerdirect/phpcodesniffer-composer-installer": true,
+            "pestphp/pest-plugin": true
+        },
+        "preferred-install": "dist",
+        "sort-packages": true
     },
     "extra": {
         "branch-alias": {
@@ -42,35 +54,24 @@
         "mantle": {
             "aliases": [],
             "providers": [
-              "Pest\\PestPluginWordPress\\ServiceProvider"
+                "Pest\\PestPluginWordPress\\ServiceProvider"
             ]
         }
     },
-    "minimum-stability": "dev",
-    "prefer-stable": true,
-    "config": {
-        "sort-packages": true,
-        "preferred-install": "dist",
-        "allow-plugins": {
-            "pestphp/pest-plugin": true,
-            "dealerdirect/phpcodesniffer-composer-installer": true,
-            "alleyinteractive/composer-wordpress-autoloader": true
-        }
-    },
     "scripts": {
-        "rector": "rector",
         "lint": "pint",
         "phpstan": "phpstan --memory-limit=512M",
-        "test:rector": "rector --dry-run",
-        "test:lint": "pint --test",
-        "test:types": "@phpstan",
-        "test:unit": "pest --colors=always",
-        "test:watch": "npx nodemon --watch tests --exec \"composer test:unit\" -e php",
+        "rector": "rector",
         "test": [
             "@test:rector",
             "@test:lint",
             "@test:types",
             "@test:unit"
-        ]
+        ],
+        "test:lint": "pint --test",
+        "test:rector": "rector --dry-run",
+        "test:types": "@phpstan",
+        "test:unit": "pest --colors=always",
+        "test:watch": "npx nodemon --watch tests --exec \"composer test:unit\" -e php"
     }
 }
