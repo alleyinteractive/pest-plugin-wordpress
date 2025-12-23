@@ -19,7 +19,7 @@
         "pestphp/pest-plugin": "^4.0.0"
     },
     "require-dev": {
-        "mantle-framework/console": "^1.15",
+        "mantle-framework/console": "^1.16",
         "pestphp/pest-dev-tools": "^4.0",
         "szepeviktor/phpstan-wordpress": "^2.0"
     },
