@@ -1,5 +1,8 @@
 <?php
 
+declare(strict_types=1);
+
+use App\Tests\TestCase;
 use Mantle\Testing\Concerns\Refresh_Database;
 
 /*
@@ -13,7 +16,7 @@ use Mantle\Testing\Concerns\Refresh_Database;
 |
 */
 
-uses(\App\Tests\TestCase::class, Refresh_Database::class)->in(__DIR__);
+uses(TestCase::class, Refresh_Database::class)->in(__DIR__);
 
 // Install WordPress via Mantle.
 \Mantle\Testing\install();
