@@ -4,6 +4,11 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
+## v1.1.0
+
+- Add support for Pest 5 while continuing to support Pest 4.
+- Update CI to run the test matrix against each supported Pest major version.
+
 ## v1.0.1
 
 - Upgrade to `mantle-framework` v1.16 to add better underlying support for Pest.
