@@ -25,14 +25,19 @@ jobs:
       matrix:
         dependency-version: [prefer-stable] # TODO: Add prefer-lowest back here.
         php: [8.3, 8.4]
+        pest: [4, 5]
         wordpress: ["latest"]
+        exclude:
+          # Pest 5 requires PHP ^8.4.
+          - php: 8.3
+            pest: 5
     runs-on: ubuntu-latest
     # Cancel any existing runs of this workflow
     concurrency:
-      group: ${{ github.workflow }}-${{ github.event_name }}-${{ github.event.pull_request.number || github.ref }}-P${{ matrix.php }}-WP${{ matrix.wordpress }}
+      group: ${{ github.workflow }}-${{ github.event_name }}-${{ github.event.pull_request.number || github.ref }}-P${{ matrix.php }}-PEST${{ matrix.pest }}-WP${{ matrix.wordpress }}
       cancel-in-progress: true
     # Name the job in the matrix
-    name: "PR Tests PHP ${{ matrix.php }} WordPress ${{ matrix.wordpress }}"
+    name: "PR Tests PHP ${{ matrix.php }} Pest ${{ matrix.pest }} WordPress ${{ matrix.wordpress }}"
     steps:
       - uses: actions/checkout@v6
 
@@ -44,7 +49,14 @@ jobs:
         # See https://github.com/alleyinteractive/action-test-php for more options
         uses: alleyinteractive/action-test-php@develop
         with:
-          install-command: composer update --${{ matrix.dependency-version }} --prefer-dist --no-interaction --no-progress
+          # pest-dev-tools isn't used by test:unit, and pinning it to the matrix
+          # Pest version conflicts with mantle-framework's dependencies, so drop
+          # it from this install entirely.
+          install-command: >
+            composer remove pestphp/pest-dev-tools --dev --no-update &&
+            composer update --${{ matrix.dependency-version }} --prefer-dist --no-interaction --no-progress
+            --with pestphp/pest:^${{ matrix.pest }}
+            --with pestphp/pest-plugin:^${{ matrix.pest }}
           php-version: '${{ matrix.php }}'
           skip-wordpress-install: 'true'
           test-command: 'composer test:unit'
